@@ -35,10 +35,13 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <div class="container">
-        <a class="navbar-brand" href="#">Prokont</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-white">
+      <div class="container d-flex justify-content-center">
+        <a class="navbar-brand" href="#">
+          <img src="../assets/img/logo.png" alt="">
+        </a>
+        <!-- <a class="navbar-brand" href="#">Prokont</a> -->
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
           aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -53,7 +56,7 @@
             <li class="nav-item">
               <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li>
-          </ul>
+          </ul> -->
           <!-- <form class="form-inline mt-2 mt-md-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -65,7 +68,7 @@
   </header>
 
   <main role="main">
-    <!-- <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -73,9 +76,10 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+          <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
-            <rect width="100%" height="100%" fill="#777" /></svg>
+            <rect width="100%" height="100%" fill="#777" /></svg> -->
+            <img src="../assets/img/slider_01.jpg" alt="">
           <div class="container">
             <div class="carousel-caption text-left">
               <h1>Example headline.</h1>
@@ -120,11 +124,11 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
-    </div> -->
+    </div>
 
     <section class="jumbotron text-center">
       <div class="container">
-        <h1>Prokont</h1>
+        <h1>O nás</h1>
         <p class="lead text-muted">Sme rodinná firma zaoberajúca sa kovovýrobou. Mame vlastné strojno-technologické
           vybavenie od delenia materiálu až po povrchovú úpravu a vlastné výrobné a skladové priestory. V malom objeme
           vyrábame aj oceľové konštrukcie</p>
@@ -170,10 +174,18 @@
 
       <div class="row featurette align-items-center">
         <div class="col-md-7 order-md-2">
-          <h2 class="featurette-heading">Abroll</h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
-            semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
-            commodo.</p>
+          <h2 class="featurette-heading">Skladové kontajnery</h2>
+          <p class="lead">Prevedenie a rozmery sú podľa ISO normy. Možné úpravy podľa požiadavky
+          odberateľa.
+          Nosná konštrukcia je zváraná z plechu s=3 a 4 mm.
+          Opláštenie kontajnera je z plechu s= 1,5mm.
+          Podlaha: OSB doska /základné prevedenie/, alebo preglejka, alebo ryhovaný
+          plech.
+          Dvere sú dvojkrídlové, uzamykateľné, v základnom prevedení na čelnej strane
+          kontajnera.
+          Vetranie: otvory v 4 rohoch kontajnera.
+          Povrchová úprava: vnútorné steny v základnom nátere, vonkajšie steny
+          vrchným náterom v RAL odtieňoch.</p>
         </div>
         <div class="col-md-5 order-md-1">
           <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
@@ -188,25 +200,16 @@
 
       <hr class="featurette-divider">
 
-      <div class="row featurette align-items-center">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Skladové kontajnery</h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
-            semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
-            commodo.</p>
+      <form>
+        <div class="form-group">
+          <label for="formGroupExampleInput">Example label</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
         </div>
-        <div class="col-md-5">
-          <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-            height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
-            role="img" aria-label="Placeholder: 500x500">
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
-          </svg> -->
-          <img src="../assets/img/01.jpg" class="img-fluid" alt="Responsive image">
+        <div class="form-group">
+          <label for="formGroupExampleInput2">Another label</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
         </div>
-      </div>
-
-      <hr class="featurette-divider">
+      </form>
 
       <!-- /END THE FEATURETTES -->
 
