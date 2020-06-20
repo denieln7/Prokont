@@ -8,6 +8,10 @@ body {
   color: #5a5a5a;
 }
 
+main {
+  margin-top: 28px;
+}
+
 .jumbotron p:last-child {
   margin-bottom: 0;
 }
@@ -59,7 +63,11 @@ footer p {
 /* Declare heights because of positioning of img element */
 .carousel-item {
   height: 32rem;
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center;
 }
+
 .carousel-item > img {
   position: absolute;
   top: 0;
