@@ -16,8 +16,16 @@ main {
   margin-bottom: 0;
 }
 
-.jumbotron h1 {
+h1 {
   font-weight: 300;
+}
+
+.marginB5rem {
+  margin-bottom: 5rem;
+}
+
+.jumbotron.contact {
+  padding-top: 0;
 }
 
 .jumbotron .container {
@@ -41,6 +49,23 @@ footer p {
   text-decoration: none;
   color: #5a5a5a;
   font-weight: bold;
+}
+
+.gallery-section .gallery a img {
+  float: left;
+  width: 25%;
+  height: auto;
+  border: 2px solid #fff;
+  -webkit-transition: -webkit-transform .15s ease;
+  -moz-transition: -moz-transform .15s ease;
+  -o-transition: -o-transform .15s ease;
+  -ms-transition: -ms-transform .15s ease;
+  transition: transform .15s ease;
+  position: relative;
+}
+
+.clear {
+  clear: both;
 }
 
 /* .containerPhoto {
