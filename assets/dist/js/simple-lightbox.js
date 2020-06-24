@@ -6,7 +6,7 @@
 */
 "use strict";
 
-function _createForOfIteratorHelper(o) { if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) { var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var it, normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _createForOfIteratorHelper(o) { if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) { var i = 0; var F = function F() { }; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var it, normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
@@ -322,7 +322,7 @@ var SimpleLightbox = /*#__PURE__*/function () {
 
         if (document.body.clientWidth < fullWindowWidth) {
           var scrollDiv = document.createElement('div'),
-              paddingRight = parseInt(document.body.style.paddingRight || 0, 10);
+            paddingRight = parseInt(document.body.style.paddingRight || 0, 10);
           scrollDiv.classList.add('sl-scrollbar-measure');
           document.body.appendChild(scrollDiv);
           scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
@@ -397,11 +397,11 @@ var SimpleLightbox = /*#__PURE__*/function () {
       var _this3 = this;
 
       var index = this.currentImageIndex,
-          length = this.relatedElements.length,
-          next = index + 1 < 0 ? length - 1 : index + 1 >= length - 1 ? 0 : index + 1,
-          prev = index - 1 < 0 ? length - 1 : index - 1 >= length - 1 ? 0 : index - 1,
-          nextImage = new Image(),
-          prevImage = new Image();
+        length = this.relatedElements.length,
+        next = index + 1 < 0 ? length - 1 : index + 1 >= length - 1 ? 0 : index + 1,
+        prev = index - 1 < 0 ? length - 1 : index - 1 >= length - 1 ? 0 : index - 1,
+        nextImage = new Image(),
+        prevImage = new Image();
       nextImage.addEventListener('load', function (event) {
         var src = event.target.getAttribute('src');
 
@@ -481,8 +481,8 @@ var SimpleLightbox = /*#__PURE__*/function () {
       }
 
       var tmpImage = new Image(),
-          windowWidth = window.innerWidth * this.options.widthRatio,
-          windowHeight = window.innerHeight * this.options.heightRatio;
+        windowWidth = window.innerWidth * this.options.widthRatio,
+        windowHeight = window.innerHeight * this.options.heightRatio;
       tmpImage.setAttribute('src', this.currentImage.getAttribute('src'));
       this.currentImage.dataset.scale = 1;
       this.currentImage.dataset.translateX = 0;
@@ -523,7 +523,7 @@ var SimpleLightbox = /*#__PURE__*/function () {
         }
 
         var imageWidth = event.target.width,
-            imageHeight = event.target.height;
+          imageHeight = event.target.height;
 
         if (_this5.options.scaleImageToRatio || imageWidth > windowWidth || imageHeight > windowHeight) {
           var ratio = imageWidth / imageHeight > windowWidth / windowHeight ? imageWidth / windowWidth : imageHeight / windowHeight;
@@ -541,7 +541,7 @@ var SimpleLightbox = /*#__PURE__*/function () {
 
         _this5.isOpen = true;
         var captionContainer = _this5.options.captionSelector === 'self' ? _this5.relatedElements[_this5.currentImageIndex] : _this5.relatedElements[_this5.currentImageIndex].querySelector(_this5.options.captionSelector),
-            captionText;
+          captionText;
 
         if (_this5.options.captions && captionContainer) {
           if (_this5.options.captionType === 'data') {
@@ -696,59 +696,57 @@ var SimpleLightbox = /*#__PURE__*/function () {
           _this6.controlCoordinates.containerOffsetY = _this6.domNodes.image.offsetTop;
 
           if (_this6.controlCoordinates.touchCount === 1)
-            /* Single touch */
-            {
-              if (!_this6.controlCoordinates.doubleTapped) {
-                _this6.controlCoordinates.doubleTapped = true;
-                setTimeout(function () {
-                  _this6.controlCoordinates.doubleTapped = false;
-                }, 300);
-              } else {
-                _this6.currentImage.classList.add('sl-transition');
+            /* Single touch */ {
+            if (!_this6.controlCoordinates.doubleTapped) {
+              _this6.controlCoordinates.doubleTapped = true;
+              setTimeout(function () {
+                _this6.controlCoordinates.doubleTapped = false;
+              }, 300);
+            } else {
+              _this6.currentImage.classList.add('sl-transition');
 
-                if (!_this6.controlCoordinates.zoomed) {
-                  _this6.controlCoordinates.initialScale = _this6.options.doubleTapZoom;
+              if (!_this6.controlCoordinates.zoomed) {
+                _this6.controlCoordinates.initialScale = _this6.options.doubleTapZoom;
 
-                  _this6.setZoomData(_this6.controlCoordinates.initialScale, 0, 0);
+                _this6.setZoomData(_this6.controlCoordinates.initialScale, 0, 0);
 
-                  _this6.zoomPanElement(0 + "px", 0 + "px", _this6.controlCoordinates.initialScale);
+                _this6.zoomPanElement(0 + "px", 0 + "px", _this6.controlCoordinates.initialScale);
 
-                  if (!_this6.domNodes.caption.style.opacity && _this6.domNodes.caption.style.display !== 'none') {
-                    _this6.fadeOut(_this6.domNodes.caption, 200);
-                  }
-
-                  _this6.controlCoordinates.zoomed = true;
-                } else {
-                  _this6.controlCoordinates.initialScale = 1;
-
-                  _this6.setZoomData(_this6.controlCoordinates.initialScale, 0, 0);
-
-                  _this6.zoomPanElement(0 + "px", 0 + "px", _this6.controlCoordinates.initialScale);
-
-                  _this6.controlCoordinates.zoomed = false;
+                if (!_this6.domNodes.caption.style.opacity && _this6.domNodes.caption.style.display !== 'none') {
+                  _this6.fadeOut(_this6.domNodes.caption, 200);
                 }
 
-                setTimeout(function () {
-                  if (_this6.currentImage) {
-                    _this6.currentImage.classList.remove('sl-transition');
-                  }
-                }, 200);
-                return false;
+                _this6.controlCoordinates.zoomed = true;
+              } else {
+                _this6.controlCoordinates.initialScale = 1;
+
+                _this6.setZoomData(_this6.controlCoordinates.initialScale, 0, 0);
+
+                _this6.zoomPanElement(0 + "px", 0 + "px", _this6.controlCoordinates.initialScale);
+
+                _this6.controlCoordinates.zoomed = false;
               }
 
-              _this6.controlCoordinates.initialOffsetX = parseFloat(_this6.currentImage.dataset.translateX);
-              _this6.controlCoordinates.initialOffsetY = parseFloat(_this6.currentImage.dataset.translateY);
-            } else if (_this6.controlCoordinates.touchCount === 2)
-            /* Pinch */
-            {
-              _this6.controlCoordinates.initialPointerOffsetX2 = event.touches[1].clientX;
-              _this6.controlCoordinates.initialPointerOffsetY2 = event.touches[1].clientY;
-              _this6.controlCoordinates.initialOffsetX = parseFloat(_this6.currentImage.dataset.translateX);
-              _this6.controlCoordinates.initialOffsetY = parseFloat(_this6.currentImage.dataset.translateY);
-              _this6.controlCoordinates.pinchOffsetX = (_this6.controlCoordinates.initialPointerOffsetX + _this6.controlCoordinates.initialPointerOffsetX2) / 2;
-              _this6.controlCoordinates.pinchOffsetY = (_this6.controlCoordinates.initialPointerOffsetY + _this6.controlCoordinates.initialPointerOffsetY2) / 2;
-              _this6.controlCoordinates.initialPinchDistance = Math.sqrt((_this6.controlCoordinates.initialPointerOffsetX - _this6.controlCoordinates.initialPointerOffsetX2) * (_this6.controlCoordinates.initialPointerOffsetX - _this6.controlCoordinates.initialPointerOffsetX2) + (_this6.controlCoordinates.initialPointerOffsetY - _this6.controlCoordinates.initialPointerOffsetY2) * (_this6.controlCoordinates.initialPointerOffsetY - _this6.controlCoordinates.initialPointerOffsetY2));
+              setTimeout(function () {
+                if (_this6.currentImage) {
+                  _this6.currentImage.classList.remove('sl-transition');
+                }
+              }, 200);
+              return false;
             }
+
+            _this6.controlCoordinates.initialOffsetX = parseFloat(_this6.currentImage.dataset.translateX);
+            _this6.controlCoordinates.initialOffsetY = parseFloat(_this6.currentImage.dataset.translateY);
+          } else if (_this6.controlCoordinates.touchCount === 2)
+            /* Pinch */ {
+            _this6.controlCoordinates.initialPointerOffsetX2 = event.touches[1].clientX;
+            _this6.controlCoordinates.initialPointerOffsetY2 = event.touches[1].clientY;
+            _this6.controlCoordinates.initialOffsetX = parseFloat(_this6.currentImage.dataset.translateX);
+            _this6.controlCoordinates.initialOffsetY = parseFloat(_this6.currentImage.dataset.translateY);
+            _this6.controlCoordinates.pinchOffsetX = (_this6.controlCoordinates.initialPointerOffsetX + _this6.controlCoordinates.initialPointerOffsetX2) / 2;
+            _this6.controlCoordinates.pinchOffsetY = (_this6.controlCoordinates.initialPointerOffsetY + _this6.controlCoordinates.initialPointerOffsetY2) / 2;
+            _this6.controlCoordinates.initialPinchDistance = Math.sqrt((_this6.controlCoordinates.initialPointerOffsetX - _this6.controlCoordinates.initialPointerOffsetX2) * (_this6.controlCoordinates.initialPointerOffsetX - _this6.controlCoordinates.initialPointerOffsetX2) + (_this6.controlCoordinates.initialPointerOffsetY - _this6.controlCoordinates.initialPointerOffsetY2) * (_this6.controlCoordinates.initialPointerOffsetY - _this6.controlCoordinates.initialPointerOffsetY2));
+          }
 
           _this6.controlCoordinates.capture = true;
         }
@@ -784,41 +782,40 @@ var SimpleLightbox = /*#__PURE__*/function () {
           _this6.controlCoordinates.touchmoveCount++;
 
           if (_this6.controlCoordinates.touchCount > 1)
-            /* Pinch */
-            {
-              _this6.controlCoordinates.pointerOffsetX2 = event.touches[1].clientX;
-              _this6.controlCoordinates.pointerOffsetY2 = event.touches[1].clientY;
-              _this6.controlCoordinates.targetPinchDistance = Math.sqrt((_this6.controlCoordinates.pointerOffsetX - _this6.controlCoordinates.pointerOffsetX2) * (_this6.controlCoordinates.pointerOffsetX - _this6.controlCoordinates.pointerOffsetX2) + (_this6.controlCoordinates.pointerOffsetY - _this6.controlCoordinates.pointerOffsetY2) * (_this6.controlCoordinates.pointerOffsetY - _this6.controlCoordinates.pointerOffsetY2));
+            /* Pinch */ {
+            _this6.controlCoordinates.pointerOffsetX2 = event.touches[1].clientX;
+            _this6.controlCoordinates.pointerOffsetY2 = event.touches[1].clientY;
+            _this6.controlCoordinates.targetPinchDistance = Math.sqrt((_this6.controlCoordinates.pointerOffsetX - _this6.controlCoordinates.pointerOffsetX2) * (_this6.controlCoordinates.pointerOffsetX - _this6.controlCoordinates.pointerOffsetX2) + (_this6.controlCoordinates.pointerOffsetY - _this6.controlCoordinates.pointerOffsetY2) * (_this6.controlCoordinates.pointerOffsetY - _this6.controlCoordinates.pointerOffsetY2));
 
-              if (_this6.controlCoordinates.initialPinchDistance === null) {
-                _this6.controlCoordinates.initialPinchDistance = _this6.controlCoordinates.targetPinchDistance;
-              }
+            if (_this6.controlCoordinates.initialPinchDistance === null) {
+              _this6.controlCoordinates.initialPinchDistance = _this6.controlCoordinates.targetPinchDistance;
+            }
 
-              if (Math.abs(_this6.controlCoordinates.initialPinchDistance - _this6.controlCoordinates.targetPinchDistance) >= 1) {
-                /* Initialize helpers */
-                _this6.controlCoordinates.targetScale = _this6.minMax(_this6.controlCoordinates.targetPinchDistance / _this6.controlCoordinates.initialPinchDistance * _this6.controlCoordinates.initialScale, 1, _this6.options.maxZoom);
-                _this6.controlCoordinates.limitOffsetX = (_this6.controlCoordinates.imgWidth * _this6.controlCoordinates.targetScale - _this6.controlCoordinates.containerWidth) / 2;
-                _this6.controlCoordinates.limitOffsetY = (_this6.controlCoordinates.imgHeight * _this6.controlCoordinates.targetScale - _this6.controlCoordinates.containerHeight) / 2;
-                _this6.controlCoordinates.scaleDifference = _this6.controlCoordinates.targetScale - _this6.controlCoordinates.initialScale;
-                _this6.controlCoordinates.targetOffsetX = _this6.controlCoordinates.imgWidth * _this6.controlCoordinates.targetScale <= _this6.controlCoordinates.containerWidth ? 0 : _this6.minMax(_this6.controlCoordinates.initialOffsetX - (_this6.controlCoordinates.pinchOffsetX - _this6.controlCoordinates.containerOffsetX - _this6.controlCoordinates.containerWidth / 2 - _this6.controlCoordinates.initialOffsetX) / (_this6.controlCoordinates.targetScale - _this6.controlCoordinates.scaleDifference) * _this6.controlCoordinates.scaleDifference, _this6.controlCoordinates.limitOffsetX * -1, _this6.controlCoordinates.limitOffsetX);
-                _this6.controlCoordinates.targetOffsetY = _this6.controlCoordinates.imgHeight * _this6.controlCoordinates.targetScale <= _this6.controlCoordinates.containerHeight ? 0 : _this6.minMax(_this6.controlCoordinates.initialOffsetY - (_this6.controlCoordinates.pinchOffsetY - _this6.controlCoordinates.containerOffsetY - _this6.controlCoordinates.containerHeight / 2 - _this6.controlCoordinates.initialOffsetY) / (_this6.controlCoordinates.targetScale - _this6.controlCoordinates.scaleDifference) * _this6.controlCoordinates.scaleDifference, _this6.controlCoordinates.limitOffsetY * -1, _this6.controlCoordinates.limitOffsetY);
+            if (Math.abs(_this6.controlCoordinates.initialPinchDistance - _this6.controlCoordinates.targetPinchDistance) >= 1) {
+              /* Initialize helpers */
+              _this6.controlCoordinates.targetScale = _this6.minMax(_this6.controlCoordinates.targetPinchDistance / _this6.controlCoordinates.initialPinchDistance * _this6.controlCoordinates.initialScale, 1, _this6.options.maxZoom);
+              _this6.controlCoordinates.limitOffsetX = (_this6.controlCoordinates.imgWidth * _this6.controlCoordinates.targetScale - _this6.controlCoordinates.containerWidth) / 2;
+              _this6.controlCoordinates.limitOffsetY = (_this6.controlCoordinates.imgHeight * _this6.controlCoordinates.targetScale - _this6.controlCoordinates.containerHeight) / 2;
+              _this6.controlCoordinates.scaleDifference = _this6.controlCoordinates.targetScale - _this6.controlCoordinates.initialScale;
+              _this6.controlCoordinates.targetOffsetX = _this6.controlCoordinates.imgWidth * _this6.controlCoordinates.targetScale <= _this6.controlCoordinates.containerWidth ? 0 : _this6.minMax(_this6.controlCoordinates.initialOffsetX - (_this6.controlCoordinates.pinchOffsetX - _this6.controlCoordinates.containerOffsetX - _this6.controlCoordinates.containerWidth / 2 - _this6.controlCoordinates.initialOffsetX) / (_this6.controlCoordinates.targetScale - _this6.controlCoordinates.scaleDifference) * _this6.controlCoordinates.scaleDifference, _this6.controlCoordinates.limitOffsetX * -1, _this6.controlCoordinates.limitOffsetX);
+              _this6.controlCoordinates.targetOffsetY = _this6.controlCoordinates.imgHeight * _this6.controlCoordinates.targetScale <= _this6.controlCoordinates.containerHeight ? 0 : _this6.minMax(_this6.controlCoordinates.initialOffsetY - (_this6.controlCoordinates.pinchOffsetY - _this6.controlCoordinates.containerOffsetY - _this6.controlCoordinates.containerHeight / 2 - _this6.controlCoordinates.initialOffsetY) / (_this6.controlCoordinates.targetScale - _this6.controlCoordinates.scaleDifference) * _this6.controlCoordinates.scaleDifference, _this6.controlCoordinates.limitOffsetY * -1, _this6.controlCoordinates.limitOffsetY);
 
-                _this6.zoomPanElement(_this6.controlCoordinates.targetOffsetX + "px", _this6.controlCoordinates.targetOffsetY + "px", _this6.controlCoordinates.targetScale);
+              _this6.zoomPanElement(_this6.controlCoordinates.targetOffsetX + "px", _this6.controlCoordinates.targetOffsetY + "px", _this6.controlCoordinates.targetScale);
 
-                if (_this6.controlCoordinates.targetScale > 1) {
-                  _this6.controlCoordinates.zoomed = true;
+              if (_this6.controlCoordinates.targetScale > 1) {
+                _this6.controlCoordinates.zoomed = true;
 
-                  if (!_this6.domNodes.caption.style.opacity && _this6.domNodes.caption.style.display !== 'none') {
-                    _this6.fadeOut(_this6.domNodes.caption, 200);
-                  }
+                if (!_this6.domNodes.caption.style.opacity && _this6.domNodes.caption.style.display !== 'none') {
+                  _this6.fadeOut(_this6.domNodes.caption, 200);
                 }
-
-                _this6.controlCoordinates.initialPinchDistance = _this6.controlCoordinates.targetPinchDistance;
-                _this6.controlCoordinates.initialScale = _this6.controlCoordinates.targetScale;
-                _this6.controlCoordinates.initialOffsetX = _this6.controlCoordinates.targetOffsetX;
-                _this6.controlCoordinates.initialOffsetY = _this6.controlCoordinates.targetOffsetY;
               }
-            } else {
+
+              _this6.controlCoordinates.initialPinchDistance = _this6.controlCoordinates.targetPinchDistance;
+              _this6.controlCoordinates.initialScale = _this6.controlCoordinates.targetScale;
+              _this6.controlCoordinates.initialOffsetX = _this6.controlCoordinates.targetOffsetX;
+              _this6.controlCoordinates.initialOffsetY = _this6.controlCoordinates.targetOffsetY;
+            }
+          } else {
             _this6.controlCoordinates.targetScale = _this6.controlCoordinates.initialScale;
             _this6.controlCoordinates.limitOffsetX = (_this6.controlCoordinates.imgWidth * _this6.controlCoordinates.targetScale - _this6.controlCoordinates.containerWidth) / 2;
             _this6.controlCoordinates.limitOffsetY = (_this6.controlCoordinates.imgHeight * _this6.controlCoordinates.targetScale - _this6.controlCoordinates.containerHeight) / 2;
@@ -885,33 +882,30 @@ var SimpleLightbox = /*#__PURE__*/function () {
           _this6.controlCoordinates.touchCount = event.touches.length;
 
           if (_this6.controlCoordinates.touchCount === 0)
-            /* No touch */
-            {
-              /* Set attributes */
-              if (_this6.currentImage) {
-                _this6.setZoomData(_this6.controlCoordinates.initialScale, _this6.controlCoordinates.targetOffsetX, _this6.controlCoordinates.targetOffsetY);
-              }
-
-              if (_this6.controlCoordinates.initialScale === 1) {
-                _this6.controlCoordinates.zoomed = false;
-
-                if (_this6.domNodes.caption.style.display === 'none') {
-                  _this6.fadeIn(_this6.domNodes.caption, 200);
-                }
-              }
-
-              _this6.controlCoordinates.initialPinchDistance = null;
-              _this6.controlCoordinates.capture = false;
-            } else if (_this6.controlCoordinates.touchCount === 1)
-            /* Single touch */
-            {
-              _this6.controlCoordinates.initialPointerOffsetX = event.touches[0].clientX;
-              _this6.controlCoordinates.initialPointerOffsetY = event.touches[0].clientY;
-            } else if (_this6.controlCoordinates.touchCount > 1)
-            /* Pinch */
-            {
-              _this6.controlCoordinates.initialPinchDistance = null;
+            /* No touch */ {
+            /* Set attributes */
+            if (_this6.currentImage) {
+              _this6.setZoomData(_this6.controlCoordinates.initialScale, _this6.controlCoordinates.targetOffsetX, _this6.controlCoordinates.targetOffsetY);
             }
+
+            if (_this6.controlCoordinates.initialScale === 1) {
+              _this6.controlCoordinates.zoomed = false;
+
+              if (_this6.domNodes.caption.style.display === 'none') {
+                _this6.fadeIn(_this6.domNodes.caption, 200);
+              }
+            }
+
+            _this6.controlCoordinates.initialPinchDistance = null;
+            _this6.controlCoordinates.capture = false;
+          } else if (_this6.controlCoordinates.touchCount === 1)
+            /* Single touch */ {
+            _this6.controlCoordinates.initialPointerOffsetX = event.touches[0].clientX;
+            _this6.controlCoordinates.initialPointerOffsetY = event.touches[0].clientY;
+          } else if (_this6.controlCoordinates.touchCount > 1)
+            /* Pinch */ {
+            _this6.controlCoordinates.initialPinchDistance = null;
+          }
         }
 
         if (_this6.controlCoordinates.mousedown) {
@@ -991,16 +985,16 @@ var SimpleLightbox = /*#__PURE__*/function () {
     key: "getDimensions",
     value: function getDimensions(element) {
       var styles = window.getComputedStyle(element),
-          height = element.offsetHeight,
-          width = element.offsetWidth,
-          borderTopWidth = parseFloat(styles.borderTopWidth),
-          borderBottomWidth = parseFloat(styles.borderBottomWidth),
-          paddingTop = parseFloat(styles.paddingTop),
-          paddingBottom = parseFloat(styles.paddingBottom),
-          borderLeftWidth = parseFloat(styles.borderLeftWidth),
-          borderRightWidth = parseFloat(styles.borderRightWidth),
-          paddingLeft = parseFloat(styles.paddingLeft),
-          paddingRight = parseFloat(styles.paddingRight);
+        height = element.offsetHeight,
+        width = element.offsetWidth,
+        borderTopWidth = parseFloat(styles.borderTopWidth),
+        borderBottomWidth = parseFloat(styles.borderBottomWidth),
+        paddingTop = parseFloat(styles.paddingTop),
+        paddingBottom = parseFloat(styles.paddingBottom),
+        borderLeftWidth = parseFloat(styles.borderLeftWidth),
+        borderRightWidth = parseFloat(styles.borderRightWidth),
+        paddingLeft = parseFloat(styles.paddingLeft),
+        paddingRight = parseFloat(styles.paddingRight);
       return {
         height: height - borderBottomWidth - borderTopWidth - paddingTop - paddingBottom,
         width: width - borderLeftWidth - borderRightWidth - paddingLeft - paddingRight
@@ -1010,7 +1004,7 @@ var SimpleLightbox = /*#__PURE__*/function () {
     key: "updateHash",
     value: function updateHash() {
       var newHash = 'pid=' + (this.currentImageIndex + 1),
-          newURL = window.location.href.split('#')[0] + '#' + newHash;
+        newURL = window.location.href.split('#')[0] + '#' + newHash;
       this.hashReseted = false;
 
       if (this.pushStateSupport) {
@@ -1172,7 +1166,7 @@ var SimpleLightbox = /*#__PURE__*/function () {
       events = this.wrap(events);
 
       var _iterator = _createForOfIteratorHelper(elements),
-          _step;
+        _step;
 
       try {
         for (_iterator.s(); !(_step = _iterator.n()).done;) {
@@ -1184,7 +1178,7 @@ var SimpleLightbox = /*#__PURE__*/function () {
 
 
           var _iterator2 = _createForOfIteratorHelper(events),
-              _step2;
+            _step2;
 
           try {
             for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
@@ -1212,14 +1206,14 @@ var SimpleLightbox = /*#__PURE__*/function () {
       events = this.wrap(events);
 
       var _iterator3 = _createForOfIteratorHelper(elements),
-          _step3;
+        _step3;
 
       try {
         for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
           var element = _step3.value;
 
           var _iterator4 = _createForOfIteratorHelper(events),
-              _step4;
+            _step4;
 
           try {
             for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
@@ -1247,7 +1241,7 @@ var SimpleLightbox = /*#__PURE__*/function () {
       elements = this.wrap(elements);
 
       var _iterator5 = _createForOfIteratorHelper(elements),
-          _step5;
+        _step5;
 
       try {
         for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
@@ -1261,44 +1255,44 @@ var SimpleLightbox = /*#__PURE__*/function () {
       }
 
       var step = 16.66666 / (duration || 300),
-          fade = function fade() {
-        var currentOpacity = parseFloat(elements[0].style.opacity);
+        fade = function fade() {
+          var currentOpacity = parseFloat(elements[0].style.opacity);
 
-        if ((currentOpacity -= step) < 0) {
-          var _iterator6 = _createForOfIteratorHelper(elements),
+          if ((currentOpacity -= step) < 0) {
+            var _iterator6 = _createForOfIteratorHelper(elements),
               _step6;
 
-          try {
-            for (_iterator6.s(); !(_step6 = _iterator6.n()).done;) {
-              var element = _step6.value;
-              element.style.display = "none";
-              element.style.opacity = '';
+            try {
+              for (_iterator6.s(); !(_step6 = _iterator6.n()).done;) {
+                var element = _step6.value;
+                element.style.display = "none";
+                element.style.opacity = '';
+              }
+            } catch (err) {
+              _iterator6.e(err);
+            } finally {
+              _iterator6.f();
             }
-          } catch (err) {
-            _iterator6.e(err);
-          } finally {
-            _iterator6.f();
-          }
 
-          callback && callback.call(_this9, elements);
-        } else {
-          var _iterator7 = _createForOfIteratorHelper(elements),
+            callback && callback.call(_this9, elements);
+          } else {
+            var _iterator7 = _createForOfIteratorHelper(elements),
               _step7;
 
-          try {
-            for (_iterator7.s(); !(_step7 = _iterator7.n()).done;) {
-              var _element = _step7.value;
-              _element.style.opacity = currentOpacity;
+            try {
+              for (_iterator7.s(); !(_step7 = _iterator7.n()).done;) {
+                var _element = _step7.value;
+                _element.style.opacity = currentOpacity;
+              }
+            } catch (err) {
+              _iterator7.e(err);
+            } finally {
+              _iterator7.f();
             }
-          } catch (err) {
-            _iterator7.e(err);
-          } finally {
-            _iterator7.f();
-          }
 
-          requestAnimationFrame(fade);
-        }
-      };
+            requestAnimationFrame(fade);
+          }
+        };
 
       fade();
     }
@@ -1310,7 +1304,7 @@ var SimpleLightbox = /*#__PURE__*/function () {
       elements = this.wrap(elements);
 
       var _iterator8 = _createForOfIteratorHelper(elements),
-          _step8;
+        _step8;
 
       try {
         for (_iterator8.s(); !(_step8 = _iterator8.n()).done;) {
@@ -1325,44 +1319,44 @@ var SimpleLightbox = /*#__PURE__*/function () {
       }
 
       var opacityTarget = parseFloat(elements[0].dataset.opacityTarget || 1),
-          step = 16.66666 * opacityTarget / (duration || 300),
-          fade = function fade() {
-        var currentOpacity = parseFloat(elements[0].style.opacity);
+        step = 16.66666 * opacityTarget / (duration || 300),
+        fade = function fade() {
+          var currentOpacity = parseFloat(elements[0].style.opacity);
 
-        if (!((currentOpacity += step) > opacityTarget)) {
-          var _iterator9 = _createForOfIteratorHelper(elements),
+          if (!((currentOpacity += step) > opacityTarget)) {
+            var _iterator9 = _createForOfIteratorHelper(elements),
               _step9;
 
-          try {
-            for (_iterator9.s(); !(_step9 = _iterator9.n()).done;) {
-              var element = _step9.value;
-              element.style.opacity = currentOpacity;
+            try {
+              for (_iterator9.s(); !(_step9 = _iterator9.n()).done;) {
+                var element = _step9.value;
+                element.style.opacity = currentOpacity;
+              }
+            } catch (err) {
+              _iterator9.e(err);
+            } finally {
+              _iterator9.f();
             }
-          } catch (err) {
-            _iterator9.e(err);
-          } finally {
-            _iterator9.f();
-          }
 
-          requestAnimationFrame(fade);
-        } else {
-          var _iterator10 = _createForOfIteratorHelper(elements),
+            requestAnimationFrame(fade);
+          } else {
+            var _iterator10 = _createForOfIteratorHelper(elements),
               _step10;
 
-          try {
-            for (_iterator10.s(); !(_step10 = _iterator10.n()).done;) {
-              var _element2 = _step10.value;
-              _element2.style.opacity = '';
+            try {
+              for (_iterator10.s(); !(_step10 = _iterator10.n()).done;) {
+                var _element2 = _step10.value;
+                _element2.style.opacity = '';
+              }
+            } catch (err) {
+              _iterator10.e(err);
+            } finally {
+              _iterator10.f();
             }
-          } catch (err) {
-            _iterator10.e(err);
-          } finally {
-            _iterator10.f();
-          }
 
-          callback && callback.call(_this10, elements);
-        }
-      };
+            callback && callback.call(_this10, elements);
+          }
+        };
 
       fade();
     }
@@ -1372,7 +1366,7 @@ var SimpleLightbox = /*#__PURE__*/function () {
       elements = this.wrap(elements);
 
       var _iterator11 = _createForOfIteratorHelper(elements),
-          _step11;
+        _step11;
 
       try {
         for (_iterator11.s(); !(_step11 = _iterator11.n()).done;) {
@@ -1392,7 +1386,7 @@ var SimpleLightbox = /*#__PURE__*/function () {
       elements = this.wrap(elements);
 
       var _iterator12 = _createForOfIteratorHelper(elements),
-          _step12;
+        _step12;
 
       try {
         for (_iterator12.s(); !(_step12 = _iterator12.n()).done;) {
@@ -1416,7 +1410,7 @@ var SimpleLightbox = /*#__PURE__*/function () {
       events = this.wrap(events);
 
       var _iterator13 = _createForOfIteratorHelper(this.elements),
-          _step13;
+        _step13;
 
       try {
         for (_iterator13.s(); !(_step13 = _iterator13.n()).done;) {
@@ -1427,7 +1421,7 @@ var SimpleLightbox = /*#__PURE__*/function () {
           }
 
           var _iterator14 = _createForOfIteratorHelper(events),
-              _step14;
+            _step14;
 
           try {
             for (_iterator14.s(); !(_step14 = _iterator14.n()).done;) {
@@ -1455,14 +1449,14 @@ var SimpleLightbox = /*#__PURE__*/function () {
       events = this.wrap(events);
 
       var _iterator15 = _createForOfIteratorHelper(this.elements),
-          _step15;
+        _step15;
 
       try {
         for (_iterator15.s(); !(_step15 = _iterator15.n()).done;) {
           var element = _step15.value;
 
           var _iterator16 = _createForOfIteratorHelper(events),
-              _step16;
+            _step16;
 
           try {
             for (_iterator16.s(); !(_step16 = _iterator16.n()).done;) {
@@ -1542,7 +1536,7 @@ var SimpleLightbox = /*#__PURE__*/function () {
       }
 
       var options = this.options,
-          selector = this.initialSelector;
+        selector = this.initialSelector;
       this.destroy();
       this.constructor(selector, options);
       return this;
