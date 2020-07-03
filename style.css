@@ -121,6 +121,12 @@ footer p {
   background-color: #fff;
 }
 
+@media (min-width: 50em) {
+  .sl-wrapper .sl-navigation button.sl-prev,
+  .sl-wrapper .sl-navigation button.sl-next {
+    font-size: 5rem;
+  }
+}
 
 @media (min-width: 40em) {
   .carousel-caption p {
